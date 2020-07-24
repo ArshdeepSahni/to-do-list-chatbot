@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,tr,td,th{
+            border: 1px solid black;
+        }
+        td{
+            text-align: center;
+            padding: 1%;
+        }
+        .td2{
+           height: 200px; 
+        }
+        body{
+            padding-left: 40%;
+            padding-top: 10%;
+        }
+        tr{
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    
+    <table style="border: 2px solid black;" id="table">
+        <tr>
+            <th colspan="2"><mark><strong>MY DAY</strong></mark></th>
+        </tr>
+        <tr>
+            <td colspan="2"><p class="td2"></p></td>
+        </tr>
+          <tr>
+            <td colspan="2"><button onclick="mon()" style="width:fit-content;">Select</button></td>
+          </tr>
+          <tr>
+            <td colspan="2"><input id="inp" type="text" style="height: 100px; font-size: 30px;font-family: lucida calligraphy;" oninput="fun1(event)"></td>
+          </tr>
+      </table>
+
+
+
+
+      <script>
+          var str;
+          var i=0;
+          var sum="";
+        function fun1(event){
+            str = event.data;
+            sum=sum+str; 
+        }
+        var temp="";
+        function mon(){
+            var table = document.getElementById("table");
+            if(sum=="hey"){
+                var row = table.insertRow(2);
+                row.insertCell(0).innerHTML = "hello"
+                row.insertCell(1).innerHTML = sum;
+            }
+            else{
+            var row = table.insertRow(2);
+            var cell1 = row.insertCell(0);
+            row.insertCell(1).innerHTML = sum;
+            document.getElementById('inp').value = null;
+            sum="";
+            row.style.marginright="100px !important";
+            }
+        }
+    </script>
+</body>
+</html>
